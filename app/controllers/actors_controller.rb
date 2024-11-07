@@ -3,8 +3,8 @@ class ActorsController < ApplicationController
     @actors = Actor.all
     render({ :template => "actor_templates/index" })
   end
-  def info
+  def show
     @actor = Actor.where( :id => params[:id])[0]
-    render({ :template => "actor_templates/info" })
+    render({ :template => "actor_templates/show" })
   end
 end

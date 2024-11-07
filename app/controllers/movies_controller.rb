@@ -3,8 +3,8 @@ class MoviesController < ApplicationController
     @movies = Movie.all
     render({ :template => "movie_templates/index" })
   end
-  def info
+  def show
     @movie = Movie.where( :id => params[:id])[0]
-    render({ :template => "movie_templates/info" })
+    render({ :template => "movie_templates/show" })
   end
 end
