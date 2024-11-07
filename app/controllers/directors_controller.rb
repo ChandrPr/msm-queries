@@ -8,5 +8,4 @@ class DirectorsController < ApplicationController
     @movies = Movie.where(:director_id => params[:id])
     render({ :template => "director_templates/info" })
   end
-
 end
