@@ -1,7 +1,5 @@
-<h1>
-  List of all directors
-</h1>
-
+<h1>List of all directors</h1>
+<hr>
 <table border="1">
 <tr>
   <th>ID</th>
@@ -10,6 +8,7 @@
   <th>Dob</th>
   <th></th>
 </tr>
+
 <% @directors.each do |director| %>
 <tr>
   <td><%= director.id %></td>
@@ -23,4 +22,5 @@
   </td>
 </tr>
 <% end %>
+
 </table>
