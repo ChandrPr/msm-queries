@@ -5,6 +5,7 @@ class ActorsController < ApplicationController
   end
   def show
     @actor = Actor.where( :id => params[:id])[0]
+    @characters = Character.where( :actor_id => params[:id])
     render({ :template => "actor_templates/show" })
   end
 end

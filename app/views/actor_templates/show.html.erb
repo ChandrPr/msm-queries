@@ -34,12 +34,13 @@
     <th></th>
   </tr>
 
-<% @movies.each do |movie| %>
+<% @characters.each do |character| %>
+<% movie = Movie.where({:id => character.movie_id})[0]%>
   <tr>
     <td><%= movie.title %></td>
     <td><%= movie.year %></td>
-    <td><%= movie.director_id %></td>
-    <td><%= @character.name %></td>
+    <td><%= Director.where({:id =>movie.director_id})[0].name %></td>
+    <td><%= character.name %></td>
     <td><a href="/movies/<%= movie.id %>">Show details</a></td>
   </tr>
 <% end %>
