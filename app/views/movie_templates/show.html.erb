@@ -20,7 +20,7 @@
   </dd>
 
   <dt>Director</dt>
-  <dd><%= Director.where({ :id => @movie.director_id})[0].name %></dd>
+  <dd><%= @movie.director.name %></dd>
 
   <dt>Created at</dt>
   <dd><%= @movie.created_at %></dd>

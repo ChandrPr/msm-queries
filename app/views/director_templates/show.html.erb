@@ -35,7 +35,7 @@
     <th></th>
   </tr>
 
-<% @movies.each do |movie| %>
+<% @director.movies.each do |movie| %>
   <tr>
     <td><%= movie.id %></td>
     <td>
@@ -43,7 +43,7 @@
     </td>
     <td><%= movie.title %></td>
     <td><%= movie.year %></td>
-    <td><%= @director.name %></td>
+    <td><%= movie.director.name %></td>
     <td><a href="/movies/<%= movie.id %>">Show details</a></td>
   </tr>
 <% end %>

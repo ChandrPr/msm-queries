@@ -14,8 +14,7 @@ class DirectorsController < ApplicationController
     render({ :template => "director_templates/ageist" })
   end
   def show
-    @director = Director.where( :id => params[:id])[0]
-    @movies = Movie.where(:director_id => params[:id])
+    @director = Director.where(:id => params[:id])[0]
     render({ :template => "director_templates/show" })
   end
 end
