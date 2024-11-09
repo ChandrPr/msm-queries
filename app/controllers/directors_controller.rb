@@ -3,14 +3,13 @@ class DirectorsController < ApplicationController
     @directors = Director.all
     render({ :template => "director_templates/index" })
   end
-  def youngest
-    @director = Director.where.not({ :dob => nil}).order({:dob => :desc})[0]
-    @case = "youngest"
-    render({ :template => "director_templates/ageist" })
-  end
-  def eldest
-    @director = Director.where.not({ :dob => nil}).order({:dob => :asc})[0]
-    @case = "eldest"
+  def age_extreme
+    @case = params[:age_extreme]
+    if @case == "youngest"
+      @director = Director.where.not({ :dob => nil}).order({:dob => :desc})[0]
+    else
+      @director = Director.where.not({ :dob => nil}).order({:dob => :asc})[0]
+    end
     render({ :template => "director_templates/ageist" })
   end
   def show
